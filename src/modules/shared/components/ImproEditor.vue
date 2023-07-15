@@ -79,20 +79,20 @@ function onButtonPressed(e: Event) {
         :show-require-mark="false"
       >
         <n-space item-style="flex-grow: 1; padding:0" :wrap="false">
-          <n-form-item label="Type d'impro" path="type">
+          <n-form-item label="Tipo de impro" path="type">
             <TypeAutoComplete v-model:value="impro.type" />
           </n-form-item>
-          <n-form-item label="Nombre de personnes" path="playerCount">
+          <n-form-item label="Número de personas" path="playerCount">
             <PlayerCountComplete v-model:value="impro.playerCount" />
           </n-form-item>
         </n-space>
 
         <n-space item-style="flex-grow: 1; padding:0" :wrap="false">
-          <n-form-item label="Catégorie" path="category">
+          <n-form-item label="Categoría" path="category">
             <CategoryAutoComplete v-model:value="impro.category" :get-show="() => true" clearable />
           </n-form-item>
 
-          <n-form-item label="Durée" path="duration">
+          <n-form-item label="Duración" path="duration">
             <n-time-picker
               v-model:value="impro.duration"
               style="width: 100%"
@@ -103,18 +103,18 @@ function onButtonPressed(e: Event) {
           </n-form-item>
         </n-space>
 
-        <n-form-item label="Thème" path="theme">
+        <n-form-item label="Tema" path="theme">
           <n-input
             v-model:value="impro.theme"
             clearable
             type="textarea"
             :autosize="{ minRows: 1, maxRows: 5 }"
-            placeholder="ex: Caucus sur le cactus"
+            placeholder="ej: Caucus sobre el cactus"
           />
         </n-form-item>
 
         <n-button type="primary" @click="onButtonPressed">
-          {{ props.edit ? 'Modifier' : 'Ajouter' }}
+          {{ props.edit ? 'Modificar' : 'Agregar' }}
         </n-button>
       </n-form>
     </n-space>
