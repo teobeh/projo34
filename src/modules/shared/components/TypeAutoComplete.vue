@@ -11,7 +11,7 @@ const types = ['Mixta', 'Comparada', 'Comparada Continuada', 'Fusilada'].map((la
     :options="types"
     :value="props.value"
     :on-update:value="(value: string) => emit('update:value', value)"
-    placeholder="Ej: Western"
+    placeholder="ej: Western"
     filterable
   />
 </template>
