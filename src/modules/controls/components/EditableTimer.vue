@@ -15,7 +15,7 @@ watch(() => props.timer.duration, (value: number) => duration.value = value)
   <n-card class="horizontal-timer">
     <n-space align="center" item-style="flex: 1 1 0">
       <n-space vertical style="padding-right: 10px">
-        <div class="timer-title">Timer actuel</div>
+        <div class="timer-title">Tiempo actual</div>
 
         <n-time-picker
           v-model:value="duration"
@@ -26,7 +26,7 @@ watch(() => props.timer.duration, (value: number) => duration.value = value)
 
         <n-space justify="space-between">
           <n-button size="small" tertiary @click="duration /= 2">÷ 2</n-button>
-          <n-button size="small" type="primary" @click="props.timer.setDuration(duration), props.timer.stop()">Appliquer</n-button>
+          <n-button size="small" type="primary" @click="props.timer.setDuration(duration), props.timer.stop()">Aplicar</n-button>
         </n-space>
       </n-space>
 
