@@ -11,7 +11,7 @@ const options = computed(() => {
 </script>
 
 <template>
-  <n-auto-complete :options="options" :value="props.value" :on-update:value="(value: string) => emit('update:value', value)" placeholder="ex: Illimité" />
+  <n-auto-complete :options="options" :value="props.value" :on-update:value="(value: string) => emit('update:value', value)" placeholder="ej: Ilimitado" />
 </template>
 
 <style lang="less" scoped>
