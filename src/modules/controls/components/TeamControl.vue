@@ -40,7 +40,7 @@ function applyPenality() {
         </n-space>
         <div v-if="props.iconsLeft" class="score">{{ props.team.score }}</div>
       </n-space>
-      <!-- <div>Score</div> -->
+      <!-- <div>Puntuación</div> -->
     </n-space>
     <div v-if="dashboardStore.displayPenality">
       <n-space class="penalities-wrapper" justify="space-around" align="center">
@@ -65,7 +65,7 @@ function applyPenality() {
             </n-icon>
           </template>
         </n-button>
-        <n-button v-if="hasMaxPenality" size="large" round @click="applyPenality">Appliquer</n-button>
+        <n-button v-if="hasMaxPenality" size="large" round @click="applyPenality">Aplicar</n-button>
         <n-button
           v-else
           size="large"
