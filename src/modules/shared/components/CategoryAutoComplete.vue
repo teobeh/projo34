@@ -25,7 +25,7 @@ const tooltip = computed(() => categoryIndices[normalyze(props.value)]);
 </script>
 
 <template>
-  <n-auto-complete :options="options" :value="props.value" :on-update:value="(value: string) => emit('update:value', value)" placeholder="ex: Western">
+  <n-auto-complete :options="options" :value="props.value" :on-update:value="(value: string) => emit('update:value', value)" placeholder="ej: Western">
     <template #suffix>
       <n-tooltip v-if="tooltip" trigger="hover" placement="top" :style="{ maxWidth: '400px' }">
         <template #trigger>
