@@ -10,7 +10,7 @@ const props = defineProps<{ timer: Timer }>();
 <template>
   <n-card class="horizontal-timer">
     <n-space align="center" item-style="flex: 1 1 0">
-      <div class="timer-title">Timer global</div>
+      <div class="timer-title">Temporizador global</div>
       <div class="timer">
         {{ formatTimer(props.timer, { showHours: true }) }}
       </div>
@@ -20,24 +20,24 @@ const props = defineProps<{ timer: Timer }>();
           <n-icon size="23"><PlayArrowRound /></n-icon>
         </n-button>
         <span v-show="props.timer.state === TimerSate.RUNNING">
-          <n-popconfirm positive-text="Mettre en pause" negative-text="Annuler" @positive-click="props.timer.pause">
+          <n-popconfirm positive-text="Pausar" negative-text="Cancelar" @positive-click="props.timer.pause">
             <template #trigger>
               <n-button circle color="#aaa">
                 <n-icon size="23"><PauseRound /></n-icon>
               </n-button>
             </template>
-            Mettre en pause le timer global ?
+            ¿Pausar el temporizador global?
           </n-popconfirm>
         </span>
         &nbsp;
         <span v-show="props.timer.state !== TimerSate.STOPPED">
-          <n-popconfirm positive-text="Réinitialiser" negative-text="Annuler" @positive-click="props.timer.stop">
+          <n-popconfirm positive-text="Reiniciar" negative-text="Cancelar" @positive-click="props.timer.stop">
             <template #trigger>
               <n-button circle color="#aaa">
                 <n-icon size="23"><StopRound /></n-icon>
               </n-button>
             </template>
-            Réinitialiser le timer global ?
+            ¿Reiniciar el temporizador global?
           </n-popconfirm>
         </span>
       </div>
