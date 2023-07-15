@@ -12,25 +12,24 @@ const closed = ref(false)
   <div class="page-wrapper">
     <div class="content-wrapper">
       <n-space align="center" justify="space-between">
-        <n-h1>Création des impros</n-h1>
+        <n-h1>Creación de las improvisaciones</n-h1>
       </n-space>
 
       <n-card
         v-if="!closed"
-        title="Création"
+        title="Creación"
         class="raised content-no-padding"
         closable
         @close="closed = true"
       >
         <p>
-          Cette page permet de créer et générer les impros pour l'arbitrage d'un match d'impro. Une fois la liste d'impro créée, il est possible de l'exporter pour l'arbitrage (ou pour le modifier
-          plus tard en le réimportant).
+          Esta página permite crear y generar las improvisaciones para el arbitraje de un partido de improvisación. Una vez creada la lista de improvisaciones, es posible exportarla para el arbitraje (o modificarla posteriormente al volver a importarla).
         </p>
         <n-alert
-          title="Sauvegardez"
+          title="Realiza una copia de seguridad"
           type="warning"
         >
-          La liste des impros est sauvegardée localement, mais dans le doute sauveragrdez entre vos sessions d'écriture en utilisant le fichier d'export/import.
+          La lista de improvisaciones se guarda localmente, pero por precaución, realiza copias de seguridad entre tus sesiones de escritura utilizando el archivo de exportación/importación.
         </n-alert>
       </n-card>
       <br>
