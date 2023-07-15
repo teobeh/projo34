@@ -27,22 +27,22 @@
         <div v-if="store.displayFooter" class="footer">
           <div class="footer-left">
             <div>
-              <span class="item-title">Type :</span>
+              <span class="item-title">Tipo:</span>
               {{ store.type }}
             </div>
             <div>
-              <span class="item-title">Catégorie :</span>
+              <span class="item-title">Categoría:</span>
               {{ store.category }}
             </div>
           </div>
           <div class="footer-center">
-            <div class="footer-center-head">Thème</div>
+            <div class="footer-center-head">Tema</div>
             <div class="footer-center-theme">{{ store.theme }}</div>
           </div>
           <div class="footer-right">
-            <div class="item-title">Nb. de personnes :</div>
-            <div>{{ store.playerCount.length ? store.playerCount : 'Illimité' }}</div>
-            <!-- <div><span>Type :</span> {{ store.type }}</div> -->
+            <div class="item-title">N° de personas:</div>
+            <div>{{ store.playerCount.length ? store.playerCount : 'Ilimitado' }}</div>
+            <!-- <div><span>Tipo:</span> {{ store.type }}</div> -->
           </div>
         </div>
       </n-card>
