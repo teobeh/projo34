@@ -89,24 +89,24 @@ function exportToBoards() {
   <div class="list-wrapper">
     <n-space class="actions" align="center" justify="space-between">
       <div v-show="impros.length > 0">
-        {{ impros.length }} impros pour une durée de {{ formatTime(impros.reduce((acc, { duration }) => acc + duration, 0), { showHours: true }) }}
+        {{ impros.length }} impros con una duración total de {{ formatTime(impros.reduce((acc, { duration }) => acc + duration, 0), { showHours: true }) }}
       </div>
 
       <n-space>
         <n-upload v-if="props.showImport" :show-file-list="false" :on-change="uploaded" accept=".json, .json5, .jsonc">
-          <n-button tertiary>Importer</n-button>
+          <n-button tertiary>Importar</n-button>
         </n-upload>
 
         <n-popconfirm
           v-if="props.showClear"
-          positive-text="Supprimer"
-          negative-text="Annuler"
+          positive-text="Eliminar"
+          negative-text="Cancelar"
           @positive-click="updateImpros([])"
         >
           <template #trigger>
-            <n-button tertiary :disabled="impros.length === 0">Vider</n-button>
+            <n-button tertiary :disabled="impros.length === 0">Vaciar</n-button>
           </template>
-          Êtes-vous sûr·e·s de vouloir supprimer toutes les impros de la liste?
+          ¿Estás seguro/a de que quieres eliminar todas las impros de la lista?
         </n-popconfirm>
 
         <n-button
@@ -115,7 +115,7 @@ function exportToBoards() {
           :disabled="impros.length === 0"
           @click="updateImpros([...impros].reverse())"
         >
-          Inverser
+          Invertir
         </n-button>
         <n-button
           v-if="props.showExport"
@@ -124,11 +124,11 @@ function exportToBoards() {
           :disabled="impros.length === 0"
           @click="exportJson"
         >
-          Exporter
+          Exportar
         </n-button>
 
         <n-button v-if="props.showBoardExport" type="primary" :disabled="impros.length === 0" @click="exportToBoards">
-          Exporter vers les cartons
+          Exportar a cartones
         </n-button>
 
 
@@ -165,7 +165,7 @@ function exportToBoards() {
     <n-modal v-model:show="showEditModal">
       <n-card style="width: 600px" title="Modal" size="huge">
         <template #header>
-          <div>Modifier l'impro</div>
+          <div>Modificar la impro</div>
         </template>
         <ImproEditor edit :impro="improToEdit" @edited="showEditModal = false" />
       </n-card>
@@ -173,7 +173,7 @@ function exportToBoards() {
     <n-modal v-model:show="showCreateModal">
       <n-card style="width: 600px" title="Modal" size="huge">
         <template #header>
-          <div>Ajouter une impro</div>
+          <div>Añadir una impro</div>
         </template>
         <ImproEditor @added="(impro) => (updateImpros([impro, ...impros]), showCreateModal = false)" />
       </n-card>
