@@ -67,19 +67,19 @@ function handleSelect(key: string, { to }: { to: string }) {
 
             <n-space v-else align="center" :size="25">
               <router-link to="/about" #="{ navigate, href }" custom>
-                <n-button text tag="a" :href="href" @click="navigate">A propos</n-button>
+                <n-button text tag="a" :href="href" @click="navigate">Acerca de</n-button>
               </router-link>
 
               <router-link to="/create" #="{ navigate, href }" custom>
-                <n-button text tag="a" :href="href" @click="navigate">Créer des impros</n-button>
+                <n-button text tag="a" :href="href" @click="navigate">Crear impros</n-button>
               </router-link>
 
               <router-link to="/controls" #="{ navigate, href }" custom>
-                <n-button text tag="a" :href="href" @click="navigate">Controls</n-button>
+                <n-button text tag="a" :href="href" @click="navigate">Controles</n-button>
               </router-link>
 
               <n-button tag="a" target="_blank" secondary href="https://github.com/sponsors/CorentinTh">
-                Faire un don
+                Hacer una donación
               </n-button>
             </n-space>
           </n-space>
@@ -89,7 +89,8 @@ function handleSelect(key: string, { to }: { to: string }) {
 
     <slot />
   </div>
-</template>        
+</template>
+
 
 <style scoped lang="less">
 .navbar {
