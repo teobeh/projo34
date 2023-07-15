@@ -49,23 +49,23 @@ function load() {
 
             <div>
               <div class="info">
-                <span>Type:</span>
+                <span>Tipo:</span>
                 {{ props.impro.type }}
               </div>
               <div class="info">
-                <span>Categorie:</span>
+                <span>Categoría:</span>
                 {{ props.impro.category }}
               </div>
               <div v-if="isMobile" class="info">
-                <span>Theme:</span>
+                <span>Tema:</span>
                 {{ props.impro.theme }}
               </div>
               <div class="info">
-                <span>Nb. personnes:</span>
+                <span>N.º de personas:</span>
                 {{ props.impro.playerCount }}
               </div>
               <div class="info">
-                <span>Durée:</span>
+                <span>Duración:</span>
                 {{ formatTime(props.impro.duration) }}
               </div>
             </div>
@@ -86,7 +86,7 @@ function load() {
             :size="0"
           >
             <div class="info">
-              <span>Theme</span>
+              <span>Tema</span>
             </div>
             <!-- <div class="accent"><n-ellipsis>{{ props.impro.theme }}</n-ellipsis></div> -->
             <div class="accent">{{ props.impro.theme }}</div>
@@ -100,8 +100,8 @@ function load() {
             :vertical="isMobile"
           >
             <n-popconfirm
-              positive-text="Supprimer"
-              negative-text="Annuler"
+              positive-text="Eliminar"
+              negative-text="Cancelar"
               @positive-click="() => emit('remove', props.impro)"
             >
               <template #trigger>
@@ -111,7 +111,7 @@ function load() {
                   </n-icon>
                 </n-button>
               </template>
-              Êtes-vous sûr·e·s de vouloir supprimer cette impro ?
+              ¿Estás seguro/a de querer eliminar esta impro?
             </n-popconfirm>
 
             <n-button color="#a2a2a2cc" text style="font-size: 24px" @click="showEditModal = true">
@@ -158,7 +158,7 @@ function load() {
     <n-modal v-model:show="showEditModal">
       <n-card style="width: 600px" title="Modal" size="huge">
         <template #header>
-          <div>Modifier l'impro</div>
+          <div>Modificar la impro</div>
         </template>
         <ImproEditor edit :impro="props.impro" @edited="improEdited" />
       </n-card>
@@ -184,8 +184,6 @@ function load() {
         opacity: 0.4;
       }
     }
-
-
 
     .handle {
       color: #a2a2a2cc;
