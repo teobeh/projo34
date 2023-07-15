@@ -34,7 +34,7 @@ const props = withDefaults(
     showImport: true,
     showCreate: true,
     showClear: true,
-    placeholder: 'Ajoutez une impro grace au formulaire',
+    placeholder: 'Agrega una impro utilizando el formulario',
   }
 );
 
@@ -61,7 +61,7 @@ function getFileExport(): FileExport {
     name: 'projo export',
     version: 1, // increment if format changes
     projoVersion: import.meta.env.PACKAGE_VERSION,
-    description: "Fichier utilisé pour l'import de configuration de match d'improvisation",
+    description: "Archivo utilizado para importar configuraciones de partidos de improvisación",
     impros: impros.value,
   };
 }
