@@ -31,21 +31,21 @@ function loadImpro(impro: Impro) {
   <div class="page-wrapper">
     <div class="content-wrapper">
       <n-space align="center" justify="space-between">
-        <n-h1>Controls</n-h1>
+        <n-h1>Controles</n-h1>
         <div> 
           <n-popconfirm
-            positive-text="Reset"
-            negative-text="Annuler"
+            positive-text="Restablecer"
+            negative-text="Cancelar"
             @positive-click="() => [dashboardStore.$reset(), eventStore.$reset(), controlsStore.$reset()]"
           >
             <template #trigger>
-              <n-button>Reset</n-button>
+              <n-button>Restablecer</n-button>
             </template>
-            Êtes-vous sûr·e·s de vouloir reset toutes la valeures par default ?
+            ¿Estás seguro/a de que quieres restablecer todos los valores predeterminados?
           </n-popconfirm>&nbsp;
           <router-link to="/dashboard" #="{ navigate, href }" custom>
             <n-button tag="a" :href="href" type="success" target="_blank">
-              Ouvrir le dashboard &nbsp;
+              Abrir el tablero &nbsp;
               <n-icon>
                 <ArrowUpRight />
               </n-icon>
@@ -54,7 +54,7 @@ function loadImpro(impro: Impro) {
         </div>
       </n-space>
       <n-card
-        title="Configuration générale"
+        title="Configuración general"
         class="raised content-no-padding"
         :segmented="!controlsStore.lockConfiguration"
       >
@@ -71,15 +71,15 @@ function loadImpro(impro: Impro) {
         <n-collapse-transition :show="!controlsStore.lockConfiguration">
           <n-card embedded :bordered="false" class="section-card">
             <n-collapse :default-expanded-names="['1', '2', '3']">
-              <n-collapse-item title="Événement" name="1">
+              <n-collapse-item title="Evento" name="1">
                 <n-form label-width="200" label-placement="left">
-                  <n-form-item label="Type d'évenement">
-                    <n-input v-model:value="eventStore.type" type="text" placeholder="ex: Match d'improvisation" />
+                  <n-form-item label="Tipo de evento">
+                    <n-input v-model:value="eventStore.type" type="text" placeholder="ejemplo: Partido de improvisación" />
                   </n-form-item>
-                  <n-form-item label="Nom de l'evenement">
-                    <n-input v-model:value="eventStore.name" type="text" placeholder="ex: Le match des petits" />
+                  <n-form-item label="Nombre del evento">
+                    <n-input v-model:value="eventStore.name" type="text" placeholder="ejemplo: El partido de los pequeños" />
                   </n-form-item>
-                  <n-form-item label="Durée totale de l'evenement">
+                  <n-form-item label="Duración total del evento">
                     <n-time-picker
                       :value="currentMillisToUTCMillis(dashboardStore.globalTimer.duration)"
                       :on-update:value="(value: number) => dashboardStore.globalTimer.duration = utcMillisToCurrentMillis(value)"
@@ -89,21 +89,21 @@ function loadImpro(impro: Impro) {
                       :disabled="!dashboardStore.displayGlobalTimer"
                       input-readonly
                     />
-                    <span v-show="!dashboardStore.displayGlobalTimer" class="muted">&nbsp;&nbsp; Le timer global est desactivé</span>
+                    <span v-show="!dashboardStore.displayGlobalTimer" class="muted">&nbsp;&nbsp; El temporizador global está desactivado</span>
                   </n-form-item>
-                  <n-form-item label="Utiliser une liste d'impros">
+                  <n-form-item label="Usar una lista de improvisaciones">
                     <n-switch v-model:value="controlsStore.useImproList" />
                   </n-form-item>
-                  <n-form-item label="Utiliser les pénalités">
+                  <n-form-item label="Usar penalizaciones">
                     <n-switch v-model:value="dashboardStore.displayPenality" />
                   </n-form-item>
                 </n-form>
               </n-collapse-item>
-              <n-collapse-item title="Affichage" name="2">
+              <n-collapse-item title="Visualización" name="2">
                 <n-form label-width="200" label-placement="left">
                   <n-grid :cols="3">
                     <n-gi :span="2">
-                      <n-form-item label="Zoom du dashboard">
+                      <n-form-item label="Zoom del tablero">
                         <n-slider
                           v-model:value="dashboardStore.zoom"
                           :step="0.05"
@@ -112,7 +112,7 @@ function loadImpro(impro: Impro) {
                           :format-tooltip="(v: number) => `${Math.floor(v * 100)}%`"
                         />
                       </n-form-item>
-                      <n-form-item label="Décalage horizontal">
+                      <n-form-item label="Desplazamiento horizontal">
                         <n-slider
                           v-model:value="dashboardStore.offsetX"
                           :step="0.05"
@@ -121,7 +121,7 @@ function loadImpro(impro: Impro) {
                           :format-tooltip="(v: number) => `${Math.floor(v * 100)}%`"
                         />
                       </n-form-item>
-                      <n-form-item label="Décalage vertical">
+                      <n-form-item label="Desplazamiento vertical">
                         <n-slider
                           v-model:value="dashboardStore.offsetY"
                           :step="0.05"
@@ -131,66 +131,66 @@ function loadImpro(impro: Impro) {
                         />
                       </n-form-item>
 
-                      <n-form-item label="Taille des indications">
+                      <n-form-item label="Tamaño de las indicaciones">
                         <n-input-number v-model:value="dashboardStore.footerFontSize" style="width: 100%" />
                       </n-form-item>
-                      <n-form-item label="Taille du thème">
+                      <n-form-item label="Tamaño del tema">
                         <n-input-number v-model:value="dashboardStore.themeFontSize" style="width: 100%" />
                       </n-form-item>
                     </n-gi>
                     <n-gi>
-                      <n-form-item label="Afficher le header">
+                      <n-form-item label="Mostrar encabezado">
                         <n-switch v-model:value="dashboardStore.displayHeader" />
                       </n-form-item>
-                      <n-form-item label="Afficher le footer">
+                      <n-form-item label="Mostrar pie de página">
                         <n-switch v-model:value="dashboardStore.displayFooter" />
                       </n-form-item>
-                      <n-form-item label="Afficher le timer global">
+                      <n-form-item label="Mostrar temporizador global">
                         <n-switch v-model:value="dashboardStore.displayGlobalTimer" />
                       </n-form-item>
                     </n-gi>
                   </n-grid>
                 </n-form>
               </n-collapse-item>
-              <n-collapse-item title="Equipes" name="3">
-                <n-form-item label="Inverser la position des équipes dans les controls par rapport au dashboard" label-placement="left">
+              <n-collapse-item title="Equipos" name="3">
+                <n-form-item label="Invertir la posición de los equipos en los controles respecto al tablero" label-placement="left">
                   <n-switch v-model:value="controlsStore.inverseTeamPosition" />
                 </n-form-item>
                 <n-form label-width="200" label-placement="left">
                   <n-grid :cols="2" x-gap="24">
                     <n-gi>
-                      <strong>Equipe 1</strong>
-                      <n-form-item label="Nom de l'équipe">
-                        <n-input v-model:value="dashboardStore.teamLeft.name" type="text" placeholder="ex: TTI" />
+                      <strong>Equipo 1</strong>
+                      <n-form-item label="Nombre del equipo">
+                        <n-input v-model:value="dashboardStore.teamLeft.name" type="text" placeholder="ejemplo: TTI" />
                       </n-form-item>
-                      <n-form-item label="Nombre de pénalités max">
+                      <n-form-item label="Número máximo de penalizaciones">
                         <n-input-number
                           v-model:value="dashboardStore.teamLeft.maxPenality"
                           style="width: 100%"
                           type="text"
-                          placeholder="ex: 3"
+                          placeholder="ejemplo: 3"
                           :min="1"
                         />
                       </n-form-item>
-                      <n-form-item label="Couleur l'équipe">
+                      <n-form-item label="Color del equipo">
                         <color-picker v-model:value="dashboardStore.teamLeft.color" />
                       </n-form-item>
                     </n-gi>
                     <n-gi>
-                      <strong>Equipe 2</strong>
-                      <n-form-item label="Nom de l'équipe">
-                        <n-input v-model:value="dashboardStore.teamRight.name" type="text" placeholder="ex: TTI" />
+                      <strong>Equipo 2</strong>
+                      <n-form-item label="Nombre del equipo">
+                        <n-input v-model:value="dashboardStore.teamRight.name" type="text" placeholder="ejemplo: TTI" />
                       </n-form-item>
-                      <n-form-item label="Nombre de pénalités max">
+                      <n-form-item label="Número máximo de penalizaciones">
                         <n-input-number
                           v-model:value="dashboardStore.teamRight.maxPenality"
                           style="width: 100%"
                           type="text"
-                          placeholder="ex: 3"
+                          placeholder="ejemplo: 3"
                           :min="1"
                         />
                       </n-form-item>
-                      <n-form-item label="Couleur l'équipe">
+                      <n-form-item label="Color del equipo">
                         <color-picker v-model:value="dashboardStore.teamRight.color" />
                       </n-form-item>
                     </n-gi>
@@ -217,18 +217,18 @@ function loadImpro(impro: Impro) {
         <n-collapse-transition :show="!controlsStore.lockOverlay">
           <n-card embedded :bordered="false">
             <n-form label-width="200" label-placement="left">
-              <n-form-item label="Afficher l'overlay">
+              <n-form-item label="Mostrar overlay">
                 <n-switch v-model:value="dashboardStore.overlay.displayed" />
               </n-form-item>
 
 
-              <n-form-item label="Contenu">
-                <n-input v-model:value="dashboardStore.overlay.content" type="textarea" placeholder="Contenu" />
+              <n-form-item label="Contenido">
+                <n-input v-model:value="dashboardStore.overlay.content" type="textarea" placeholder="Contenido" />
               </n-form-item>
             </n-form>
             <n-space justify="center">
-              <n-alert v-if="dashboardStore.overlay.displayed" title="Attention" type="warning">
-                L'overlay est affiché, les modifications seront visibles par tout le monde
+              <n-alert v-if="dashboardStore.overlay.displayed" title="Advertencia" type="warning">
+                El overlay está visible, los cambios serán visibles para todos
               </n-alert>
             </n-space>
           </n-card>
@@ -259,27 +259,27 @@ function loadImpro(impro: Impro) {
               <n-form label-placement="top">
                 <div style="padding: 20px">
                   <n-space item-style="flex-grow: 1; padding:0" :wrap="false">
-                    <n-form-item label="Type d'impro">
+                    <n-form-item label="Tipo de improvisación">
                       <TypeAutoComplete v-model:value="dashboardStore.type" />
                     </n-form-item>
-                    <n-form-item label="Nombre de personnes">
+                    <n-form-item label="Número de personas">
                       <PlayerCountComplete v-model:value="dashboardStore.playerCount" />
                     </n-form-item>
                   </n-space>
 
-                  <n-form-item label="Catégorie" :show-feedback="false">
+                  <n-form-item label="Categoría" :show-feedback="false">
                     <CategoryAutoComplete v-model:value="dashboardStore.category" />
                   </n-form-item>
                 </div>
 
-                <n-card embedded title="Thème">
+                <n-card embedded title="Tema">
                   <n-form-item :show-label="false">
                     <n-input
                       v-model:value="dashboardStore.theme"
                       size="large"
                       type="textarea"
                       :autosize="{ minRows: 1, maxRows: 5 }"
-                      placeholder="ex: Caucus sur le cactus"
+                      placeholder="ejemplo: Caucus sobre el cactus"
                     />
                   </n-form-item>
                 </n-card>
@@ -308,7 +308,7 @@ function loadImpro(impro: Impro) {
               show-load
               show-archive
               show-create
-              placeholder="Créer un liste d'impro sur /create"
+              placeholder="Crear una lista de improvisaciones en /create"
               @load-impro="loadImpro"
             />
           </n-card>
