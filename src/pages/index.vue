@@ -19,16 +19,15 @@ const version = import.meta.env.PACKAGE_VERSION;
               <div>
                 version <a href="https://github.com/cauctus/projo" target="_blank">v{{ version }}</a>
               </div>
-              <div>une solution <a href="https://cauctus.net" target="_blank">cauctus.net</a></div>
+              <div>una solución <a href="https://cauctus.net" target="_blank">cauctus.net</a></div>
             </n-space>
           </n-space>
 
           <div class="content">
-            Projo est une application web simple d'utilisation pour la gestion des scores pour le théatre d'improvisation. Pas besoin de compte ou d'installation pour utiliser cette apllication, tout
-            se passe dans le navigateur.
+            Projo es una aplicación web fácil de usar para la gestión de puntuaciones en el teatro de improvisación. No se necesita una cuenta o instalación para utilizar esta aplicación, todo se realiza en el navegador.
             <br>
             <br>
-            Application opensource codée avec <n-text type="error">♥</n-text> par <a href="https://github.com/CorentinTh" target="_blank">Corentin Thomasset</a>.
+            Aplicación de código abierto desarrollada con <n-text type="error">♥</n-text> por <a href="https://github.com/CorentinTh" target="_blank">Corentin Thomasset</a>.
           </div>
 
           <n-space class="footer" align="center" justify="space-between">
@@ -79,7 +78,7 @@ const version = import.meta.env.PACKAGE_VERSION;
                   :href="href"
                   @click="navigate"
                 >
-                  Créer des impros
+                  Crear improvisaciones
                 </n-button>
               </router-link>
 
@@ -92,7 +91,7 @@ const version = import.meta.env.PACKAGE_VERSION;
                   type="success"
                   @click="navigate"
                 >
-                  Commencer &nbsp;
+                  Empezar &nbsp;
                   <n-icon><ArrowRight /></n-icon>
                 </n-button>
               </router-link>
