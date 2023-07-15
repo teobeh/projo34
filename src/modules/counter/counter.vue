@@ -17,7 +17,7 @@ const now = useNow()
       <br>
       <n-space item-style="flex:1 1 0">
         <n-card style="width: 100%">
-          <n-statistic tabular-nums label="Actuellement"> 
+          <n-statistic tabular-nums label="Actualmente"> 
             <n-space justify="center" class="timer timer-current">
               {{ store.countCurrent }}
             </n-space>
@@ -25,7 +25,7 @@ const now = useNow()
         </n-card>
 
         <n-card style="width: 100%">
-          <n-statistic tabular-nums label="Au total"> 
+          <n-statistic tabular-nums label="En total"> 
             <n-space justify="center" class="timer timer-global">
               {{ store.countGlobal }}
             </n-space>
@@ -43,28 +43,28 @@ const now = useNow()
 
         <n-space item-style="flex:1 1 0" :vertical="isMobile">
           <n-popconfirm
-            positive-text="Reset"
-            negative-text="Annuler"
+            positive-text="Reiniciar"
+            negative-text="Cancelar"
             @positive-click="() => store.countCurrent = 0"
           >
             <template #trigger>
               <n-button tertiary style="width: 100%">
-                Reset le compteur actuel
+                Reiniciar el contador actual
               </n-button>
             </template>
-            Êtes-vous sûr·e·s de vouloir reset le compteur actuel ?
+            ¿Estás seguro/a de que quieres reiniciar el contador actual?
           </n-popconfirm>
           <n-popconfirm
-            positive-text="Reset"
-            negative-text="Annuler"
+            positive-text="Reiniciar"
+            negative-text="Cancelar"
             @positive-click="() => store.countGlobal = 0"
           >
             <template #trigger>
               <n-button tertiary style="width: 100%">
-                Reset le compteur global
+                Reiniciar el contador global
               </n-button>
             </template>
-            Êtes-vous sûr·e·s de vouloir reset le compteur global ?
+            ¿Estás seguro/a de que quieres reiniciar el contador global?
           </n-popconfirm>
         </n-space>
       </n-space>
