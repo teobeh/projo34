@@ -17,30 +17,30 @@ function onUpload(impros: Impro[]) {
   <div class="page-wrapper">
     <div class="content-wrapper">
       <n-space align="center" justify="space-between">
-        <n-h1>Mes cartons d'impros</n-h1>
+        <n-h1>Mis cartones de improvisación</n-h1>
       </n-space>
 
       <n-space>
         <import-impro-list-button @impro-uploaded="onUpload">
-          <n-button tertiary>Importer une liste d'impro</n-button>
+          <n-button tertiary>Importar una lista de improvisación</n-button>
         </import-impro-list-button>
 
 
         <n-popconfirm
           v-if="store.impros.length > 0"
-          positive-text="Supprimer"
-          negative-text="Annuler"
+          positive-text="Eliminar"
+          negative-text="Cancelar"
           @positive-click="() => store.impros = []"
         >
           <template #trigger>
             <n-button tertiary>
-              Supprimer les cartons
+              Eliminar los cartones
             </n-button>
           </template>
-          Êtes-vous sûr·e·s de vouloir supprimer tout les cartons ?
+          ¿Estás seguro/a de que quieres eliminar todos los cartones?
         </n-popconfirm>
         <n-button tertiary @click="showHelp = !showHelp">
-          {{ showHelp ? 'Masquer l\'aide' : 'Afficher l\'aide' }}
+          {{ showHelp ? 'Ocultar ayuda' : 'Mostrar ayuda' }}
         </n-button>
       </n-space>
 
