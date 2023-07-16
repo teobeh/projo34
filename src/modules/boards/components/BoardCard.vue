@@ -2,33 +2,33 @@
   <n-card class="raised content-no-padding board-card" :class="{ 'is-hidden': isHidden }">
     <n-grid x-gap="12" y-gap="12" :cols="2">
       <n-gi class="type">
-        <div v-if="props.showHelp" class="help">Type :</div>
+        <div v-if="props.showHelp" class="help">Tipo:</div>
         {{ impro.type }}
       </n-gi>
       <n-gi class="category">
-        <div v-if="props.showHelp" class="help">De catégorie :</div>
+        <div v-if="props.showHelp" class="help">Categoría:</div>
 
         {{ impro.category }}
       </n-gi>
       <n-gi class="theme" span="2">
-        <div v-if="props.showHelp" class="help">Ayant pour thèmes :</div>
+        <div v-if="props.showHelp" class="help">Temas:</div>
 
         {{ impro.theme }}
       </n-gi>
       <n-gi class="player-count">
-        <div v-if="props.showHelp" class="help">Nombre de joueurs :</div>
+        <div v-if="props.showHelp" class="help">Número de jugadores:</div>
 
         {{ impro.playerCount }}
       </n-gi>
       <n-gi class="duration">
-        <div v-if="props.showHelp" class="help">Pour une durée de :</div>
+        <div v-if="props.showHelp" class="help">Duración:</div>
         {{ formatTime(impro.duration) }} min
       </n-gi>
     </n-grid>
     <br>
     <n-space justify="center">
       <n-button tertiary @click="isHidden = !isHidden">
-        {{ isHidden ? 'Afficher' : 'Masquer' }}
+        {{ isHidden ? 'Mostrar' : 'Ocultar' }}
       </n-button>
     </n-space>
   </n-card>
