@@ -10,7 +10,7 @@ function createTimerStore(partialSate: Partial<Timer>) {
     Object.assign(
       {
         elapsed: 0,
-        duration: 0, // in ms
+        duration: 0, // en ms
         intervalId: -1,
         state: TimerSate.STOPPED,
       },
@@ -60,7 +60,7 @@ function createTeamStore(partialSate: Partial<Team>) {
   const state = reactive(
     Object.assign(
       {
-        name: 'Equipe',
+        name: 'Equipo',
         color: '#ff0000',
         score: 0,
         penality: 0,
@@ -93,14 +93,14 @@ function createTeamStore(partialSate: Partial<Team>) {
 export const useDashboardStore = defineStore('dashboard', {
   persist: true,
   state: () => ({
-    teamLeft: createTeamStore({ name: 'Equipe 1', color: colors[3] }),
-    teamRight: createTeamStore({ name: 'Equipe 2', color: colors[2] }),
+    teamLeft: createTeamStore({ name: 'Equipo 1', color: colors[3] }),
+    teamRight: createTeamStore({ name: 'Equipo 2', color: colors[2] }),
     globalTimer: createTimerStore({ duration: 90 * 60 * 1000 }),
     timer: createTimerStore({ duration: 3 * 60 * 1000 }),
     category: 'Libre',
-    theme: 'Caucus sur le cactus',
-    playerCount: 'Illimité',
-    type: 'Mixte',
+    theme: 'Caucus sobre un cactus',
+    playerCount: 'Ilimitada',
+    type: 'Mixta',
     zoom: 1,
     offsetX: 0,
     offsetY: 0,
@@ -110,7 +110,7 @@ export const useDashboardStore = defineStore('dashboard', {
     displayPenality: true,
     overlay: {
       displayed: true,
-      content: "# Match d'impro",
+      content: "# Match de Impro",
     },
     footerFontSize: 26,
     themeFontSize: 60,
