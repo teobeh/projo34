@@ -9,9 +9,9 @@ import { FormItemRule } from 'naive-ui';
 const defaultImpro = {
   category: 'Libre',
   duration: 3 * 60 * 1000,
-  playerCount: 'Illimité',
+  playerCount: 'Ilimitada',
   theme: '',
-  type: 'Mixte',
+  type: 'Mixta',
 };
 
 const emit = defineEmits<{ (e: 'added', i: Impro): void; (e: 'edited', i: Impro): void }>();
