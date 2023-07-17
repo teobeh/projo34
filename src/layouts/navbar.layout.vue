@@ -9,23 +9,23 @@ const router = useRouter()
 
 const options = [
   {
-    label: 'A propos',
+    label: 'La propuesta',
     to: '/about'
   },
   {
-    label: 'Créer des impros',
+    label: 'Crear las Impros',
     to: '/create'
   },
   {
-    label: 'Les cartons',
+    label: 'Cartones',
     to: '/boards'
   },
   {
-    label: 'Controls',
+    label: 'Controles',
     to: '/controls'
   },
   {
-    label: 'Faire un don',
+    label: 'Hacer una donación',
     to: 'https://github.com/sponsors/CorentinTh'
   }
 ]
