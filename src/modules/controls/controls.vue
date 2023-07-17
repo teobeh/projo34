@@ -259,20 +259,20 @@ function loadImpro(impro: Impro) {
               <n-form label-placement="top">
                 <div style="padding: 20px">
                   <n-space item-style="flex-grow: 1; padding:0" :wrap="false">
-                    <n-form-item label="Tipo de improvisación">
+                    <n-form-item label="Tipo">
                       <TypeAutoComplete v-model:value="dashboardStore.type" />
                     </n-form-item>
-                    <n-form-item label="Número de personas">
+                    <n-form-item label="Cantidad de Jugadores">
                       <PlayerCountComplete v-model:value="dashboardStore.playerCount" />
                     </n-form-item>
                   </n-space>
 
-                  <n-form-item label="Categoría" :show-feedback="false">
+                  <n-form-item label="Categoría o estilo" :show-feedback="false">
                     <CategoryAutoComplete v-model:value="dashboardStore.category" />
                   </n-form-item>
                 </div>
 
-                <n-card embedded title="Tema">
+                <n-card embedded title="Título">
                   <n-form-item :show-label="false">
                     <n-input
                       v-model:value="dashboardStore.theme"
