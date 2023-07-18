@@ -17,12 +17,13 @@
           <n-space class="middle-wrapper" vertical align="center" :wrap="false">
             <div v-if="store.displayGlobalTimer" class="timer global-timer">
               {{ formatTimer(store.globalTimer, { showHours: true }) }}
+            <img v-bind:src="'/media/avatars/' + joke.avatar" /> 
             </div>
             <div class="timer current-timer">{{ formatTimer(store.timer) }}</div>
           </n-space>
           <team-info :team="store.teamRight" />
         </n-space>
-
+        
         <div v-if="store.displayFooter" class="footer">
           <div class="footer-left">
             <div>
