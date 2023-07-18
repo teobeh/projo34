@@ -18,8 +18,11 @@
             <div v-if="store.displayGlobalTimer" class="timer global-timer">
               {{ formatTimer(store.globalTimer, { showHours: true }) }}
             </div>
-            
-            <img v-bind:src="https://impro.ar/match/images/logo-lpi.svg" /> 
+            <template>
+    <div id="app">
+        <img src="https://impro.ar/match/images/logo-lpi.svg">
+    </div>
+</template>
             <div class="timer current-timer">{{ formatTimer(store.timer) }}</div>
           </n-space>
           <team-info :team="store.teamRight" />
