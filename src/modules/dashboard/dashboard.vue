@@ -16,7 +16,7 @@
 
           <n-space class="middle-wrapper" vertical align="center" :wrap="false">
             <div v-if="store.displayGlobalTimer" class="timer global-timer">
-            <img src="https://impro.ar/match/images/logo-lpi.svg" alt="MDN">
+              {{ formatTimer(store.globalTimer, { showHours: true }) }}
             </div>
             <div class="timer current-timer">{{ formatTimer(store.timer) }}</div>
           </n-space>
