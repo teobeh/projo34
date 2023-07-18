@@ -18,7 +18,7 @@
             <div v-if="store.displayGlobalTimer" class="timer global-timer">
               {{ formatTimer(store.globalTimer, { showHours: true }) }}
             </div>
-
+            <img src="https://impro.ar/match/images/logo-lpi.svg" alt="MDN">
             <div class="timer current-timer">{{ formatTimer(store.timer) }}</div>
           </n-space>
           <team-info :team="store.teamRight" />
@@ -36,11 +36,11 @@
             </div>
           </div>
           <div class="footer-center">
-            <div class="footer-center-head">Título</div>
+            <div class="footer-center-head">Título:</div>
             <div class="footer-center-theme">{{ store.theme }}</div>
           </div>
           <div class="footer-right">
-            <div class="item-title">Cantidad de jugadores</div>
+            <div class="item-title">Cantidad de jugadores:</div>
             <div>{{ store.playerCount.length ? store.playerCount : 'Ilimitado' }}</div>
             <!-- <div><span>Tipo:</span> {{ store.type }}</div> -->
           </div>
